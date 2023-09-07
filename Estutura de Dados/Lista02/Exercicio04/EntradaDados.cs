@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercicio02
+namespace Exercicio04
 {
     public class EntradaDados
     {
         public EntradaDados() { }
 
-        public int LeInteiro(string msg)
+        public double LeDouble(string msg)
         {
             string aux;
-            int res;
+            double res;
             bool tst = false;
 
             do
             {
                 Console.Write(msg);
                 aux = Console.ReadLine();
-                if (int.TryParse(aux, out res))
+                if (double.TryParse(aux, out res))
                 {
                     tst = true;
                 }
