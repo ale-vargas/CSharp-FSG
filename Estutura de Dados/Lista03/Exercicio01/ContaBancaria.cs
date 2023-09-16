@@ -13,16 +13,37 @@ namespace Exercicio01
 {
     public class ContaBancaria
     {
-        public int numeroConta { get; private set; }
-        public string nomeTitular { get; private set; }
-        public double saldo { get; private set; }
+        private int numeroConta;
+        private string nomeTitular;
+        private double saldo;
 
-
-        public ContaBancaria(int numeroConta, string nomeTitular, double saldo)
+        public ContaBancaria()
         {
-            this.numeroConta = numeroConta;
-            this.nomeTitular = nomeTitular;
+            numeroConta = 0;
+            nomeTitular = "";
+            saldo = 0;
+        }
+        public ContaBancaria(int conta, string nome, double saldo)
+        {
+            numeroConta = conta;
+            nomeTitular = nome;
             this.saldo = saldo;
+        }
+
+        public int NumeroConta
+        {
+            get { return numeroConta; }
+            set { numeroConta = value; }
+        }
+        public string NomeTitular
+        {
+            get { return nomeTitular; }
+            set { nomeTitular = value; }
+        }
+        public double Saldo
+        {
+            get { return saldo; }
+            set { saldo = value; }
         }
 
         /*
@@ -37,13 +58,14 @@ namespace Exercicio01
             {
                 saldo += valor;
                 Console.WriteLine($"Realizado depósito no valor de: R$ {valor}.");
-                Console.WriteLine($"Saldo na conta é de: R${saldo}.");
+                Console.WriteLine($"Saldo na conta é de: R$ {saldo}.");
             }
             else
             {
                 Console.WriteLine("ERRO! Nenhum valor informado para depósito.");
             }
         }
+
         public void Sacar(double valor)
         {
             if (valor > 0)
@@ -52,7 +74,7 @@ namespace Exercicio01
                 {
                     saldo -= valor;
                     Console.WriteLine($"Realizado saque no valor de: R$ {valor}.");
-                    Console.WriteLine($"Saldo na conta é de: R${saldo}.");
+                    Console.WriteLine($"Saldo na conta é de: R$ {saldo}.");
                 }
                 else
                 {
@@ -63,6 +85,12 @@ namespace Exercicio01
             {
                 Console.WriteLine("ERRO! Nenhum valor informado para saque.");
             }
+        }
+        public void ExibirDadosConta()
+        {
+            Console.WriteLine($"Número da Conta: {NumeroConta}");
+            Console.WriteLine($"Nome do Titular: {NomeTitular}");
+            Console.WriteLine($"Saldo da Conta: R$ {Saldo}");
         }
     }
 }

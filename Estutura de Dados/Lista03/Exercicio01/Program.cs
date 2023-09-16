@@ -20,11 +20,7 @@ namespace Exercicio01
         public Program()
         {
             minhaConta = new ContaBancaria(12345, "João", 1000.0);
-
-            Console.WriteLine($"Número da Conta: {minhaConta.numeroConta}");
-            Console.WriteLine($"Nome do Titular: {minhaConta.nomeTitular}");
-            Console.WriteLine($"Saldo da Conta: R$ {minhaConta.saldo}");
-
+            minhaConta.ExibirDadosConta();
             minhaConta.Depositar(500.0);
             minhaConta.Sacar(200.0);
         }
