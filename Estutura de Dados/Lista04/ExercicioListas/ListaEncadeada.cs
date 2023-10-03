@@ -20,15 +20,15 @@ namespace ExercicioListas
         public void Inserir(int valor)
         {
             Nodo novoNodo = new Nodo(valor);
-            
+
             if (_raiz == null)
             {
                 _raiz = novoNodo;
                 return;
             }
-            
+
             Nodo nodo = _raiz;
-            
+
             while (nodo.Proximo != null)
             {
                 nodo = nodo.Proximo;
@@ -44,12 +44,12 @@ namespace ExercicioListas
                 Console.WriteLine("A lista está vazia.");
                 return;
             }
-            
+
             Console.Write(_raiz.Conteudo);
-            
+
             Nodo nodo = _raiz.Proximo;
-            
-            while (nodo !=  null)
+
+            while (nodo != null)
             {
                 Console.Write($" -> {nodo.Conteudo}");
                 nodo = nodo.Proximo;
@@ -65,16 +65,16 @@ namespace ExercicioListas
                 Console.WriteLine("A lista está vazia.");
                 return;
             }
-            
+
             if (_raiz.Conteudo == valor)
             {
                 _raiz = _raiz.Proximo;
                 return;
             }
-            
+
             Nodo nodoAnterior = null;
             Nodo nodoAtual = _raiz;
-            
+
             while (nodoAtual != null && nodoAtual.Conteudo != valor)
             {
                 nodoAnterior = nodoAtual;
@@ -107,6 +107,29 @@ namespace ExercicioListas
                 nodo = nodo.Proximo;
             }
             return contador;
+        }
+
+        /*
+        Exercício 3: Busca por Elemento
+        Descrição do Problema: Implemente um método que busque um elemento na lista.
+        Métodos Adicionais: - Buscar(valor): Retorna true se o elemento com o valor especificado estiver na lista, senão retorna false.
+        */
+
+        public bool Buscar(int valor)
+        {
+            Nodo nodo = _raiz;
+
+            do
+            {
+                if (nodo.Conteudo == valor)
+                {
+                    return true;
+                }
+                nodo = nodo.Proximo;
+            } 
+            while (nodo != null);
+
+            return false;
         }
     }
 }
