@@ -33,7 +33,9 @@ namespace ExercicioListas
             Console.WriteLine($"Número de elementos: {count}"); // Saída: Número de elementos: 3
             */
 
+
             // Exercício 3: Busca por Elemento
+            /*
             lista.Inserir(10);
             lista.Inserir(20);
             lista.Inserir(30);
@@ -41,6 +43,12 @@ namespace ExercicioListas
             Console.WriteLine(found); // Saída: True
             bool notFound = lista.Buscar(40);
             Console.WriteLine(notFound); // Saída: False
+            */
+
+            // Exercício 4: Inserção no Início
+            lista.Inserir(20);
+            lista.InserirNoInicio(10);
+            lista.Exibir(); // Saída: 10 -> 20
         }
         static void Main(string[] args)
         {

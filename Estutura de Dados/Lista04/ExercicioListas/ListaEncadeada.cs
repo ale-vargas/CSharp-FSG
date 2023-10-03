@@ -131,5 +131,18 @@ namespace ExercicioListas
 
             return false;
         }
+
+        /*
+        Exercício 4: Inserção no Início
+        Descrição do Problema: Permita a inserção de elementos no início da lista.
+        Métodos Adicionais: - InserirNoInicio(valor): Insere um elemento no início da lista.
+        */
+
+        public void InserirNoInicio(int valor)
+        {
+            Nodo novoNodo = new Nodo(valor);
+            novoNodo.Proximo = _raiz;
+            _raiz = novoNodo;
+        }
     }
 }
