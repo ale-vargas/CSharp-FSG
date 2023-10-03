@@ -45,10 +45,21 @@ namespace ExercicioListas
             Console.WriteLine(notFound); // Saída: False
             */
 
+
             // Exercício 4: Inserção no Início
+            /*
             lista.Inserir(20);
             lista.InserirNoInicio(10);
             lista.Exibir(); // Saída: 10 -> 20
+            */
+
+
+            //Exercício 5: Inversão da Lista
+            lista.Inserir(10);
+            lista.Inserir(20);
+            lista.Inserir(30);
+            lista.Inverter();
+            lista.Exibir(); // Saída: 30 -> 20 -> 10
         }
         static void Main(string[] args)
         {

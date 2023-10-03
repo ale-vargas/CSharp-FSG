@@ -144,5 +144,29 @@ namespace ExercicioListas
             novoNodo.Proximo = _raiz;
             _raiz = novoNodo;
         }
+
+
+        /*Exercício 5: Inversão da Lista
+        Descrição do Problema: Implemente um método que inverta a ordem dos elementos na lista.
+        Métodos Adicionais: - Inverter(): Inverte a ordem dos elementos na lista.
+         */
+
+        public void Inverter()
+        {
+            Nodo nodoAtual = _raiz;
+            Nodo nodoAnterior = null;
+            Nodo nodoProximo = null;
+
+            while (nodoAtual != null)
+            {
+                nodoProximo = nodoAtual.Proximo;
+                nodoAtual.Proximo = nodoAnterior;
+
+                nodoAnterior = nodoAtual;
+                nodoAtual = nodoProximo;
+            }
+
+            _raiz = nodoAnterior;
+        }
     }
 }
