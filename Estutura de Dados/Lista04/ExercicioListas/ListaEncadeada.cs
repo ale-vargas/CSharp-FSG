@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -87,6 +88,25 @@ namespace ExercicioListas
             }
 
             nodoAnterior.Proximo = nodoAtual.Proximo;
+        }
+
+        /*
+        Exercício 2: Contagem de Elementos
+        Descrição do Problema: Adicione um método que retorne o número de elementos na lista.
+        Métodos Adicionais: - ContarElementos(): Retorna o número de elementos na lista.
+         */
+
+        public int ContarElementos()
+        {
+            int contador = 0;
+            Nodo nodo = _raiz;
+
+            while (nodo != null)
+            {
+                contador++;
+                nodo = nodo.Proximo;
+            }
+            return contador;
         }
     }
 }
