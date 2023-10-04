@@ -242,5 +242,39 @@ namespace ExercicioListas
                 nodoAtual = nodoAtual.Proximo;
             }
         }
+
+        /*
+        Exercício 8: Interseção de Listas
+        Descrição do Problema: Crie um método que retorne uma nova lista contendo a interseção de duas listas encadeadas.
+        Métodos Adicionais: - Intersecao(outraLista): Retorna uma nova lista contendo os elementos que estão presentes em 
+        ambas as listas.
+         */
+
+        public ListaEncadeada Intersecao(ListaEncadeada outraLista)
+        {
+            ListaEncadeada resultado = new ListaEncadeada();
+
+            Nodo nodoLista1 = _raiz;
+
+            while (nodoLista1 != null)
+            {
+                Nodo nodoLista2 = outraLista._raiz;
+
+                while (nodoLista2 != null)
+                {
+                    if (nodoLista1.Conteudo == nodoLista2.Conteudo)
+                    {
+                        resultado.Inserir(nodoLista1.Conteudo);
+                        break;
+                    }
+
+                    nodoLista2 = nodoLista2.Proximo;
+                }
+
+                nodoLista1 = nodoLista1.Proximo;
+            }
+
+            return resultado;
+        }
     }
 }

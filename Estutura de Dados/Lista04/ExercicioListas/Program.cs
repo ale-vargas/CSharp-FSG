@@ -53,7 +53,7 @@ namespace ExercicioListas
             */
 
 
-            //Exercício 5: Inversão da Lista
+            // Exercício 5: Inversão da Lista
             /*
             lista.Inserir(10);
             lista.Inserir(20);
@@ -63,7 +63,7 @@ namespace ExercicioListas
             */
 
 
-            //Exercício 6: Concatenação de Listas
+            // Exercício 6: Concatenação de Listas
             /*
             ListaEncadeada lista1 = new ListaEncadeada();
             lista1.Inserir(10);
@@ -76,13 +76,28 @@ namespace ExercicioListas
             */
 
 
-            //Exercício 7: Remoção de Duplicatas
+            // Exercício 7: Remoção de Duplicatas
+            /*
             lista.Inserir(10);
             lista.Inserir(20);
             lista.Inserir(10);
             lista.Inserir(30);
             lista.RemoverDuplicatas();
             lista.Exibir(); // Saída: 10 -> 20 -> 30
+            */
+
+
+            // Exercício 8: Interseção de Listas
+            ListaEncadeada lista1 = new ListaEncadeada();
+            lista1.Inserir(10);
+            lista1.Inserir(20);
+            lista1.Inserir(30);
+            ListaEncadeada lista2 = new ListaEncadeada();
+            lista2.Inserir(20);
+            lista2.Inserir(30);
+            lista2.Inserir(40);
+            ListaEncadeada intersecao = lista1.Intersecao(lista2);
+            intersecao.Exibir(); // Saída: 20 -> 30
         }
         static void Main(string[] args)
         {
