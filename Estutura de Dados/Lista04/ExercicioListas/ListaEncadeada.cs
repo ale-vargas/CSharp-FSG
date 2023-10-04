@@ -145,8 +145,8 @@ namespace ExercicioListas
             _raiz = novoNodo;
         }
 
-
-        /*Exercício 5: Inversão da Lista
+        /*
+        Exercício 5: Inversão da Lista
         Descrição do Problema: Implemente um método que inverta a ordem dos elementos na lista.
         Métodos Adicionais: - Inverter(): Inverte a ordem dos elementos na lista.
          */
@@ -167,6 +167,45 @@ namespace ExercicioListas
             }
 
             _raiz = nodoAnterior;
+        }
+
+        /*
+        Exercício 6: Concatenação de Listas
+        Descrição do Problema: Crie um método que concatene duas listas encadeadas.
+        Métodos Adicionais: - Concatenar(outraLista): Concatena a lista atual com outra lista encadeada.
+         */
+
+        public Nodo PegarUltimoNodo()
+        {
+            if (_raiz == null)
+            {
+                return null;
+            }
+
+            Nodo nodo = _raiz;
+            while (nodo.Proximo != null)
+            {
+                nodo = nodo.Proximo;
+            }
+
+            return nodo;
+        }
+
+        public void Concatenar(ListaEncadeada outraLista)
+        {
+            if (_raiz == null)
+            {
+                _raiz = outraLista._raiz;
+            }
+            else
+            {
+                Nodo ultimoNodo = PegarUltimoNodo();
+
+                if (ultimoNodo != null)
+                {
+                    ultimoNodo.Proximo = outraLista._raiz;
+                }
+            }
         }
     }
 }
