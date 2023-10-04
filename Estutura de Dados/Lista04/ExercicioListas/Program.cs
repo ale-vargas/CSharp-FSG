@@ -64,6 +64,7 @@ namespace ExercicioListas
 
 
             //Exercício 6: Concatenação de Listas
+            /*
             ListaEncadeada lista1 = new ListaEncadeada();
             lista1.Inserir(10);
             lista1.Inserir(20);
@@ -72,6 +73,16 @@ namespace ExercicioListas
             lista2.Inserir(40);
             lista1.Concatenar(lista2);
             lista1.Exibir(); // Saída: 10 -> 20 -> 30 -> 40
+            */
+
+
+            //Exercício 7: Remoção de Duplicatas
+            lista.Inserir(10);
+            lista.Inserir(20);
+            lista.Inserir(10);
+            lista.Inserir(30);
+            lista.RemoverDuplicatas();
+            lista.Exibir(); // Saída: 10 -> 20 -> 30
         }
         static void Main(string[] args)
         {

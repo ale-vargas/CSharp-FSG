@@ -207,5 +207,40 @@ namespace ExercicioListas
                 }
             }
         }
+
+        /*
+        Exercício 7: Remoção de Duplicatas
+        Descrição do Problema: Implemente um método que remova elementos duplicados da lista.
+        Métodos Adicionais: - RemoverDuplicatas(): Remove elementos duplicados da lista.
+         */
+
+        public void RemoverDuplicatas()
+        {
+            if (_raiz == null || _raiz.Proximo == null)
+            {
+                return;
+            }
+
+            Nodo nodoAtual = _raiz;
+
+            while (nodoAtual != null)
+            {
+                Nodo nodoComparacao = nodoAtual;
+
+                while (nodoComparacao.Proximo != null)
+                {
+                    if (nodoComparacao.Proximo.Conteudo == nodoAtual.Conteudo)
+                    {
+                        nodoComparacao.Proximo = nodoComparacao.Proximo.Proximo;
+                    }
+                    else
+                    {
+                        nodoComparacao = nodoComparacao.Proximo;
+                    }
+                }
+
+                nodoAtual = nodoAtual.Proximo;
+            }
+        }
     }
 }
