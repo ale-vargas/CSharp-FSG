@@ -276,5 +276,56 @@ namespace ExercicioListas
 
             return resultado;
         }
+
+        /*
+        Exercício 9: Ordenação da Lista
+        Descrição do Problema: Implemente um método que ordene os elementos da lista em ordem crescente.
+        Métodos Adicionais: - Ordenar(): Ordena os elementos da lista em ordem crescente
+        */
+
+        public void Ordenar()
+        {
+            if (_raiz == null || _raiz.Proximo == null)
+            {
+                return;
+            }
+
+            bool troca;
+
+            do
+            {
+                troca = false;
+                Nodo nodoAtual = _raiz;
+                Nodo nodoAnterior = null;
+
+                while (nodoAtual.Proximo != null)
+                {
+                    if (nodoAtual.Conteudo > nodoAtual.Proximo.Conteudo)
+                    {
+                        Nodo temp = nodoAtual.Proximo;
+                        nodoAtual.Proximo = temp.Proximo;
+                        temp.Proximo = nodoAtual;
+
+                        if (nodoAnterior != null)
+                        {
+                            nodoAnterior.Proximo = temp;
+                        }
+                        else
+                        {
+                            _raiz = temp;
+                        }
+
+                        nodoAnterior = temp;
+                        troca = true;
+                    }
+                    else
+                    {
+                        nodoAnterior = nodoAtual;
+                        nodoAtual = nodoAtual.Proximo;
+                    }
+                }
+            }
+            while (troca);
+        }
     }
 }

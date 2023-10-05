@@ -88,6 +88,7 @@ namespace ExercicioListas
 
 
             // Exercício 8: Interseção de Listas
+            /*
             ListaEncadeada lista1 = new ListaEncadeada();
             lista1.Inserir(10);
             lista1.Inserir(20);
@@ -98,6 +99,15 @@ namespace ExercicioListas
             lista2.Inserir(40);
             ListaEncadeada intersecao = lista1.Intersecao(lista2);
             intersecao.Exibir(); // Saída: 20 -> 30
+            */
+
+
+            // Exercício 9: Ordenação da Lista
+            lista.Inserir(30);
+            lista.Inserir(10);
+            lista.Inserir(20);
+            lista.Ordenar();
+            lista.Exibir(); // Saída: 10 -> 20 -> 30
         }
         static void Main(string[] args)
         {
