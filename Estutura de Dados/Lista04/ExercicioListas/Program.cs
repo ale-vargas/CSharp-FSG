@@ -13,7 +13,7 @@ namespace ExercicioListas
             ListaEncadeada lista = new ListaEncadeada();
 
             // Exercício 1: Lista Encadeada Simples Básica
-            /* 
+            /*
             lista.Inserir(10);
             lista.Inserir(20);
             lista.Inserir(30);
@@ -103,11 +103,24 @@ namespace ExercicioListas
 
 
             // Exercício 9: Ordenação da Lista
+            /*
             lista.Inserir(30);
             lista.Inserir(10);
             lista.Inserir(20);
             lista.Ordenar();
             lista.Exibir(); // Saída: 10 -> 20 -> 30
+            */
+
+            // Exercício 10: Divisão da Lista
+            /*
+            lista.Inserir(10);
+            lista.Inserir(20);
+            lista.Inserir(30);
+            lista.Inserir(40);
+            ListaEncadeada[] listasDivididas = lista.Dividir();
+            listasDivididas[0].Exibir(); // Saída: 10 -> 20
+            listasDivididas[1].Exibir(); // Saída: 30 -> 40
+            */
         }
         static void Main(string[] args)
         {
