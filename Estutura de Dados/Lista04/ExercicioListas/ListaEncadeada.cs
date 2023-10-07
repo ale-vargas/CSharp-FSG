@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -12,14 +13,7 @@ namespace ExercicioListas
     public class ListaEncadeada
     {
         private Nodo _raiz;
-        private int tamanho;
-
-        public ListaEncadeada()
-        {
-            this._raiz = null;
-            this.tamanho = 0;
-        }
-
+        
         /* Exercício 1: Lista Encadeada Simples Básica 
         Descrição do Problema: Crie uma lista encadeada simples que permita a inserção e remoção de elementos. */
 
@@ -41,8 +35,6 @@ namespace ExercicioListas
                 }
                 nodo.Proximo = novoNodo;
             }
-
-            tamanho++;
         }
 
         // Exibir(): Exibe os elementos da lista.
@@ -346,29 +338,30 @@ namespace ExercicioListas
 
         public ListaEncadeada[] Dividir()
         {
-            if (this.tamanho <= 1)
+            ListaEncadeada[] listas = new ListaEncadeada[2];
+            listas[0] = new ListaEncadeada();
+            listas[1] = new ListaEncadeada();
+
+            double metade = ContarElementos() / 2;
+            double cont = 0;
+
+            Nodo nodo = _raiz;
+
+            while (nodo != null)
             {
-                return new ListaEncadeada[] { this };
+                cont++;
+                if (cont <= metade)
+                {
+                    listas[0].Inserir(nodo.Conteudo);
+                }
+                else
+                {
+                    listas[1].Inserir(nodo.Conteudo);
+                }
+                nodo = nodo.Proximo;
             }
 
-            int metade = this.tamanho / 2;
-            ListaEncadeada lista1 = new ListaEncadeada();
-            ListaEncadeada lista2 = new ListaEncadeada();
-
-            Nodo nodoAtual = this._raiz;
-            int i = 0;
-
-            while (i < metade)
-            {
-                lista1.Inserir(nodoAtual.Conteudo);
-                nodoAtual = nodoAtual.Proximo;
-                i++;
-            }
-
-            // Atualizar _raiz de lista2
-            lista2._raiz = nodoAtual;
-
-            return new ListaEncadeada[] { lista1, lista2 };
+            return listas;
         }
     }
 }
