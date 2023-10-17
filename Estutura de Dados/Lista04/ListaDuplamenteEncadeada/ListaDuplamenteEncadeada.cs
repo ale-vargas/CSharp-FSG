@@ -105,5 +105,65 @@ namespace ListaDuplamenteEncadeada
             }
         }
 
+        /*
+       Exercício 2: Contagem de Elementos
+       Descrição do Problema: Adicione um método que retorne o número de elementos na lista.
+       Métodos Adicionais: - ContarElementos(): Retorna o número de elementos na lista.
+        */
+
+        public int ContarElementos()
+        {
+            int contador = 0;
+            Nodo nodo = _raiz;
+
+            while (nodo != null)
+            {
+                contador++;
+                nodo = nodo.Proximo;
+            }
+            return contador;
+        }
+
+        /*
+        Exercício 3: Busca por Elemento
+        Descrição do Problema: Implemente um método que busque um elemento na lista.
+        Métodos Adicionais: - Buscar(valor): Retorna true se o elemento com o valor especificado estiver na lista, senão retorna false.
+        */
+
+        public bool Buscar(int valor)
+        {
+            Nodo nodo = _raiz;
+
+            do
+            {
+                if (nodo.Conteudo == valor)
+                {
+                    return true;
+                }
+                nodo = nodo.Proximo;
+            }
+            while (nodo != null);
+
+            return false;
+        }
+
+        /*
+        Exercício 4: Inserção no Início
+        Descrição do Problema: Permita a inserção de elementos no início da lista.
+        Métodos Adicionais: - InserirNoInicio(valor): Insere um elemento no início da lista.
+        */
+
+        public void InserirNoInicio(int valor)
+        {
+            Nodo novoNodo = new Nodo(valor);
+
+            if (_raiz != null)
+            {
+                novoNodo.Proximo = _raiz;
+                _raiz.Anterior = novoNodo;
+            }
+
+            _raiz = novoNodo;
+        }
     }
 }
