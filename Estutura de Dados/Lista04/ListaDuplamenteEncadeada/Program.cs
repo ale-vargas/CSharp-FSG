@@ -101,6 +101,17 @@ namespace ListaDuplamenteEncadeada
             intersecao.Exibir(); // Saída: 20 -> 30
             */
 
+
+            // Exercício 9: Ordenação da Lista
+            /*
+            lista.Inserir(30);
+            lista.Inserir(10);
+            lista.Inserir(20);
+            lista.Ordenar();
+            lista.Exibir(); // Saída: 10 -> 20 -> 30
+            */
+
+
         }
         static void Main(string[] args)
         {
