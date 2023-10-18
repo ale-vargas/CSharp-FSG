@@ -235,6 +235,46 @@ namespace ListaDuplamenteEncadeada
             }
         }
 
+        /*
+        Exercício 7: Remoção de Duplicatas
+        Descrição do Problema: Implemente um método que remova elementos duplicados da lista.
+        Métodos Adicionais: - RemoverDuplicatas(): Remove elementos duplicados da lista.
+         */
+
+        public void RemoverDuplicatas()
+        {
+            if (_raiz == null || _raiz.Proximo == null)
+            {
+                return;
+            }
+
+            Nodo nodoAtual = _raiz;
+
+            while (nodoAtual != null)
+            {
+                Nodo nodoComparacao = nodoAtual.Proximo;
+
+                while (nodoComparacao != null)
+                {
+                    if (nodoComparacao.Conteudo == nodoAtual.Conteudo)
+                    {
+                        nodoComparacao.Anterior.Proximo = nodoComparacao.Proximo;
+
+                        if (nodoComparacao.Proximo != null)
+                        {
+                            nodoComparacao.Proximo.Anterior = nodoComparacao.Anterior;
+                        }
+                    }
+
+                    nodoComparacao = nodoComparacao.Proximo;
+                }
+
+                nodoAtual = nodoAtual.Proximo;
+            }
+        }
+
+
+
 
 
     }
