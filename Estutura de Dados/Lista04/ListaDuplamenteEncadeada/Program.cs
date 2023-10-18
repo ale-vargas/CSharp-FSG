@@ -22,6 +22,7 @@ namespace ListaDuplamenteEncadeada
             lista.Exibir(); // Saída: 10 -> 30
             */
 
+
             // Exercício 2: Contagem de Elementos
             /*
             lista.Inserir(10);
@@ -51,6 +52,7 @@ namespace ListaDuplamenteEncadeada
             lista.Exibir(); // Saída: 10 -> 20
             */
 
+
             // Exercício 5: Inversão da Lista
             /*
             lista.Inserir(10);
@@ -58,6 +60,19 @@ namespace ListaDuplamenteEncadeada
             lista.Inserir(30);
             lista.Inverter();
             lista.Exibir(); // Saída: 30 -> 20 -> 10
+            */
+
+
+            // Exercício 6: Concatenação de Listas
+            /*
+            ListaDuplamenteEncadeada lista1 = new ListaDuplamenteEncadeada();
+            lista1.Inserir(10);
+            lista1.Inserir(20);
+            ListaDuplamenteEncadeada lista2 = new ListaDuplamenteEncadeada();
+            lista2.Inserir(30);
+            lista2.Inserir(40);
+            lista1.Concatenar(lista2);
+            lista1.Exibir(); // Saída: 10 -> 20 -> 30 -> 40
             */
         }
         static void Main(string[] args)
