@@ -165,5 +165,31 @@ namespace ListaDuplamenteEncadeada
 
             _raiz = novoNodo;
         }
+
+
+
+        public void Inverter()
+        {
+            Nodo nodoAtual = _raiz;
+            Nodo nodoAnterior = null;
+            Nodo nodoProximo = null;
+
+            while (nodoAtual != null)
+            {
+                nodoProximo = nodoAtual.Proximo;
+
+                nodoAtual.Proximo = nodoAnterior;
+                nodoAtual.Anterior = nodoProximo;
+
+                nodoAnterior = nodoAtual;
+                nodoAtual = nodoProximo;
+            }
+            _raiz = nodoAnterior;
+        }
+
+
+
+
+
     }
 }
