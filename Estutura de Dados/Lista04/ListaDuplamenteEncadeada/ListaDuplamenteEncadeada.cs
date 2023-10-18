@@ -361,5 +361,48 @@ namespace ListaDuplamenteEncadeada
             }
             while (troca);
         }
+
+        /*
+        Exercício 10: Divisão da Lista
+        Descrição do Problema: Crie um método que divida uma lista encadeada em duas, de modo que cada nova lista 
+        contenha metade dos elementos originais.
+        Métodos Adicionais: Dividir(): Divide a lista em duas listas com aproximadamente a mesma quantidade de elementos.
+        */
+
+        public ListaDuplamenteEncadeada[] Dividir()
+        {
+            ListaDuplamenteEncadeada[] listas = new ListaDuplamenteEncadeada[2];
+            listas[0] = new ListaDuplamenteEncadeada();
+            listas[1] = new ListaDuplamenteEncadeada();
+
+            double metade = ContarElementos() / 2;
+            double cont = 0;
+
+            Nodo nodo = _raiz;
+
+            while (nodo != null)
+            {
+                cont++;
+
+                Nodo proximo = nodo.Proximo;
+
+                if (cont <= metade)
+                {
+                    listas[0].Inserir(nodo.Conteudo);
+                }
+                else
+                {
+                    if (nodo.Anterior != null)
+                    {
+                        nodo.Anterior.Proximo = null;
+                    }
+
+                    listas[1].Inserir(nodo.Conteudo);
+                }
+
+                nodo = proximo;
+            }
+            return listas;
+        }
     }
 }

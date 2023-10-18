@@ -89,15 +89,15 @@ namespace ListaDuplamenteEncadeada
 
             // Exercício 8: Interseção de Listas
             /*
-            ListaEncadeada lista1 = new ListaEncadeada();
+            ListaDuplamenteEncadeada lista1 = new ListaDuplamenteEncadeada();
             lista1.Inserir(10);
             lista1.Inserir(20);
             lista1.Inserir(30);
-            ListaEncadeada lista2 = new ListaEncadeada();
+            ListaDuplamenteEncadeada lista2 = new ListaDuplamenteEncadeada();
             lista2.Inserir(20);
             lista2.Inserir(30);
             lista2.Inserir(40);
-            ListaEncadeada intersecao = lista1.Intersecao(lista2);
+            ListaDuplamenteEncadeada intersecao = lista1.Intersecao(lista2);
             intersecao.Exibir(); // Saída: 20 -> 30
             */
 
@@ -111,6 +111,16 @@ namespace ListaDuplamenteEncadeada
             lista.Exibir(); // Saída: 10 -> 20 -> 30
             */
 
+
+            // Exercício 10: Divisão da Lista
+
+            lista.Inserir(10);
+            lista.Inserir(20);
+            lista.Inserir(30);
+            lista.Inserir(40);
+            ListaDuplamenteEncadeada[] listasDivididas = lista.Dividir();
+            listasDivididas[0].Exibir(); // Saída: 10 -> 20
+            listasDivididas[1].Exibir(); // Saída: 30 -> 40
 
         }
         static void Main(string[] args)
